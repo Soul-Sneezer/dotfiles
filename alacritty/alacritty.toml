@@ -1,0 +1,16 @@
+import = ["/home/robert/.config/alacritty/themes/themes/monokai_charcoal.toml"]
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "Mononoki Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Mononoki Mono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Mononoki Nerd Font"
+style = "regular"

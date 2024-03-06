@@ -33,3 +33,7 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = true,
   },
 }
+
+local keyset = vim.keymap.set
+keyset("n", "<leader>f", ":!firefox <C-r>=expand('%:r')<cr>.html &<cr>")
+keyset("n", "<leader>q", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>")

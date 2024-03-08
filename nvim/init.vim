@@ -8,6 +8,7 @@ Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 Plug 'vlime/vlime', {'rtp': 'vim/'}
 Plug 'Olical/conjure'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tree-sitter/tree-sitter'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'romgrk/barbar.nvim'
 Plug 'nvimdev/dashboard-nvim'
@@ -18,6 +19,14 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'KeitaNakamura/tex-conceal.vim'
+" main one
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" Third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 colorscheme moonfly
@@ -52,3 +61,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+lua require("coq")
+let g:coq_settings = { 'auto_start': v:true }

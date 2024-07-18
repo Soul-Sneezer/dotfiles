@@ -27,6 +27,8 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " Third party sources -- See https://github.com/ms-jpq/coq.thirdparty
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 call plug#end()
 
 colorscheme moonfly

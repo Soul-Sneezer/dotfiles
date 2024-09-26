@@ -29,6 +29,15 @@ Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 colorscheme moonfly
@@ -66,3 +75,9 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 lua require("coq")
 let g:coq_settings = { 'auto_start': v:true }
+
+set expandtab      " Converts tabs to spaces
+set tabstop=4      " Number of spaces that a tab counts for
+set shiftwidth=4   " Number of spaces used for indentation
+set softtabstop=4  " Number of spaces when editing with tabs
+

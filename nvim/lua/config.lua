@@ -35,11 +35,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 local lsp = require "lspconfig"
-local coq = require "coq"
-
-lsp.tsserver.setup({})
-lsp.tsserver.setup(coq.lsp_ensure_capabilities{})
-vim.cmd('COQnow -s')
 
 local keyset = vim.keymap.set
 keyset("n", "<leader>f", ":!firefox <C-r>=expand('%:r')<cr>.html &<cr>")

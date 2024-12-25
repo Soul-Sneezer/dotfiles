@@ -32,6 +32,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 call plug#end()
 
 colorscheme moonfly

@@ -33,6 +33,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'frankroeder/parrot.nvim'
 call plug#end()
 
 colorscheme moonfly

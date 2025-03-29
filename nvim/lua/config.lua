@@ -112,7 +112,9 @@ cmp.setup.cmdline(':', {
 })
 -- Ensure Mason is installed
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+        ensure_installed = { "jdtls" },
+    })
 
 -- Set up LSP servers
 local lspconfig = require('lspconfig')
@@ -133,7 +135,10 @@ lspconfig.rust_analyzer.setup{}
 lspconfig.gopls.setup{}
 
 -- Java
-lspconfig.jdtls.setup{}
+lspconfig.jdtls.setup({
+    cmd = { "java", "-Declipse.application=org.eclipse.jdt.ls.core.id1", "-Dosgi.bundles.defaultStartLevel=4", "-Declipse.product=org.eclipse.jdt.product", "-Duser.library.path=/path/to/jdtls/libs", "-jar", "/path/to/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", "-configuration", "/path/to/jdtls/config_win", "-data", "/path/to/workspace" },
+    root_dir = lspconfig.util.root_pattern(".git", "pom.xml", "build.gradle", "settings.gradle"),
+})
 
 -- CSS
 lspconfig.cssls.setup{}
@@ -148,4 +153,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 lspconfig.pyright.setup{
     capabilities = capabilities,
 }
-
+require("parrot").setup {
+      -- Providers must be explicitly added to make them available.
+      providers = {
+        -- provide an empty list to make provider available (no API key required)
+        github = {
+          api_key = os.getenv "GITHUB_TOKEN",
+        },
+      }
+  }
